@@ -1,4 +1,4 @@
-import platform from "platform";
+import { Platform } from "platform";
 import { Character } from "./character";
 
 function setup() {
@@ -17,14 +17,17 @@ let canvasWidth = 400;
 let canvasHeight = 400;
 let floor = 300;
 let character = new Character(50, 50, 50, 50);
+let platform = new Platform(200, 200,100,100);
 
 function draw() {
     background(100, 100, 100);
 
     character.draw();
     platform.draw();
+    platform1.draw();
 
     platform.x -= 10;
+    platform1.x -= 10;
     if (platform.x + platform.w < 0) {
         platform.x = 500;
     }
