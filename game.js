@@ -17,11 +17,10 @@ let canvasWidth = 400;
 let canvasHeight = 400;
 let floor = 300;
 let character = new Character(50, 50, 50, 50);
-let platform = new Platform(200, 200, 100, 100);
 
 let platforms = [
-    new Platform(200, 200, 100, 100),
-    new Platform(400, 200, 100, 100),
+    new Platform(200, 210, 100, 25),
+    new Platform(800, 210, 100, 25),
 ];
 
 function draw() {
@@ -38,17 +37,28 @@ function draw() {
         }
     }
 
-    
-
     if (
-        character.y + character.h < 300 &&
-        !character.isColliding(character, platform)
+        characterFall(character, platforms)
     ) {
         character.y += 10;
     }
 
     // Floor
     line(0, floor, canvasWidth, floor);
+}
+
+function characterFall(character, platforms) {
+    for (const platform of platforms) {
+        if (character.isColliding(character, platform)) {
+            return false;
+        }
+    }
+
+    if (character.y + character.h < floor) {
+        return true;
+    }
+
+    return false;
 }
 
 function keyPressed() {

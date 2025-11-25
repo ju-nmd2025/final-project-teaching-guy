@@ -13,7 +13,7 @@ export default class Character {
     }
 
     isColliding(character, platform) {
-    if (platform.y === character.y + character.w && platform.x <= character.x + character.w) {
+    if (platform.y === character.y + character.w && platform.x <= character.x + character.w && platform.x + platform.w > character.x) {
         return true;
     } else {
         return false;
