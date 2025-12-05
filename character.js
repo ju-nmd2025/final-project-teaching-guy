@@ -41,3 +41,6 @@ export default class Character {
         pop();
     }
 }
+
+
+export {Character}

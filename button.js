@@ -35,3 +35,5 @@ export default class Button {
         }
     }
 }
+
+export { Button };

@@ -1,7 +1,7 @@
-import { Platform, generatePlatforms } from "./platform";
-import { Spike, generateSpikes } from "./spike";
-import Character from "./character";
-import Button from "./button";
+import { Platform, generatePlatforms } from "./platform.js";
+import { Spike, generateSpikes } from "./spike.js";
+import {Character} from "./character.js";
+import {Button} from "./button.js";
 
 // The Controller, or GameHandler, currently initiates and calls other objects/classes to collaborate. It does almost nothing on it's own, and if it were nicer it would do even less on it's own.
 
@@ -109,3 +109,5 @@ export default class GameHandler {
         this.gameButtons.deathButton.draw();
     }
 }
+
+export { GameHandler };

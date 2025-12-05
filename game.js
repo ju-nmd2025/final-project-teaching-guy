@@ -7,6 +7,8 @@ function setup() {
 	createCanvas(gameHandler.canvasWidth, gameHandler.canvasHeight);
 }
 
+window.setup = setup;
+
 // Could be a lot prettier with even more taken apart and put in the right places.
 function draw() {
 	background(100, 100, 100);
@@ -56,3 +58,13 @@ function keyPressed() {
 		gameHandler.characterJump();
 	}
 }
+window.draw = draw;
+
+
+window.addEventListener("click", function (event) {
+	mousePressed();
+});
+
+window.addEventListener("keydown", function (event) {
+	keyPressed();
+});
